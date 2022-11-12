@@ -1,10 +1,11 @@
 #This is a sample Image 
-FROM ubuntu 
-MAINTAINER nv63354@gmail.com 
+FROM ubuntu
 
-RUN apt-get update 
-RUN apt-get install –y nginx 
-CMD [“echo”,”Image created”] 
+MAINTAINER nilesh63354@gmail.com
+
+RUN apt-get update
+
+CMD ["echo", "Welcome to Simplilearn"]
 
 #FROM  centos:latest
 #MAINTAINER uokereh@gmail.com
