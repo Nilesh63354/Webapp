@@ -1,18 +1,26 @@
-FROM  centos:latest
-MAINTAINER uokereh@gmail.com
-RUN cd /etc/yum.repos.d/
-RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
-RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
-RUN yum install -y httpd \
- zip\
- unzip
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page277/blueneek.zip /var/www/html/
-WORKDIR /var/www/html/
-RUN unzip blueneek.zip 
-RUN cp -rvf blueneek/* .
-RUN rm -rf blueneek blueneek.zip
-CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
-EXPOSE 80 22
+#This is a sample Image 
+FROM ubuntu 
+MAINTAINER nv63354@gmail.com 
+
+RUN apt-get update 
+RUN apt-get install –y nginx 
+CMD [“echo”,”Image created”] 
+
+#FROM  centos:latest
+#MAINTAINER uokereh@gmail.com
+#RUN cd /etc/yum.repos.d/
+#RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+#RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+#RUN yum install -y httpd \
+# zip\
+# unzip
+#ADD https://www.free-css.com/assets/files/free-css-templates/download/page277/blueneek.zip /var/www/html/
+#WORKDIR /var/www/html/
+#RUN unzip blueneek.zip 
+#RUN cp -rvf blueneek/* .
+#RUN rm -rf blueneek blueneek.zip
+#CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+#EXPOSE 80 22
 
 
 # FROM  centos:latest
